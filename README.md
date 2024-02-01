@@ -1,1 +1,1 @@
-My repo with Ansible playbooks, mostly for studying
+My repo with Ansible playbooks

@@ -1,9 +1,0 @@
----
-- name: "nginx.conf backuper"
-  hosts: "all"
-  become: yes
-  tasks:
-    - name: "Backup /etc/nginx/nginx.conf"
-      copy:
-        src: /etc/nginx/nginx.conf
-        dest: /etc/nginx/nginx.conf_bkp

@@ -1,1 +1,1 @@
-My repo with Ansible playbooks
+Script for syncing repos

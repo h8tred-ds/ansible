@@ -3,9 +3,13 @@
   hosts: "target"
   become: yes
   tasks:
-    - name: "Backup /etc/nginx/nginx.conf"
-      copy:
+    - name: "Fetch /etc/nginx/nginx.conf"
+      fetch:
         src: /etc/nginx/nginx.conf
-        dest: /etc/nginx/nginx.conf
+        dest: /tmp/
+        flat: yes
+    - name: "Copy nginx.conf to remote /etc/nginx/nginx.conf_bkp"
+      copy:
+        src: /tmp/nginx.conf
+        dest: /etc/nginx/nginx.conf_bkp
         mode: u=rwx,g=rx,o=rx
-        backup: true
